@@ -50,6 +50,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Long createCustomer(final CustomerDTO dto) {
         final Customer customerToCreate = customerConverter.toEntity(dto);
+        customerRepository.create(customerToCreate);
         return customerToCreate.getId();
     }
 

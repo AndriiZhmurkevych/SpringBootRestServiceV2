@@ -50,6 +50,7 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public Long createTask(final TaskDTO dto) {
         final Task taskToCreate = taskConverter.toEntity(dto);
+        taskRepository.create(taskToCreate);
         return taskToCreate.getId();
     }
 

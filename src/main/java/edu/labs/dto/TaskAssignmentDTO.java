@@ -1,5 +1,7 @@
 package edu.labs.dto;
 
+import javax.validation.constraints.NotBlank;
+
 import edu.labs.entities.Customer;
 import edu.labs.entities.Employee;
 import edu.labs.entities.Task;
@@ -7,8 +9,11 @@ import edu.labs.entities.Task;
 public class TaskAssignmentDTO {
 
     private long id;
+    @NotBlank
     private Task task;
+    @NotBlank
     private Employee employee;
+    @NotBlank
     private Customer reporter;
 
     public TaskAssignmentDTO(final long id, final Task task, final Employee employee, final Customer reporter) {

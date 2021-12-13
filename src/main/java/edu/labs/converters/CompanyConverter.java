@@ -1,9 +1,12 @@
 package edu.labs.converters;
 
 
+import org.springframework.stereotype.Component;
+
 import edu.labs.dto.CompanyDTO;
 import edu.labs.entities.Company;
 
+@Component
 public class CompanyConverter implements EntityConverter<Company, CompanyDTO> {
 
     @Override

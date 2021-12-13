@@ -50,6 +50,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Long createEmployee(final EmployeeDTO dto) {
         final Employee employeeToCreate = employeeConverter.toEntity(dto);
+        employeeRepository.create(employeeToCreate);
         return employeeToCreate.getId();
     }
 

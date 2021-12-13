@@ -65,8 +65,9 @@ public class TaskAssignmentServiceImpl implements TaskAssignmentService {
 
     @Override
     public Long createTaskAssignment(final TaskAssignmentDTO dto) {
-        final TaskAssignment taskToCreate = taskAssignmentConverter.toEntity(dto);
-        return taskToCreate.getId();
+        final TaskAssignment taskAssignmentToCreate = taskAssignmentConverter.toEntity(dto);
+        taskAssignmentRepository.create(taskAssignmentToCreate);
+        return taskAssignmentToCreate.getId();
     }
 
     @Override

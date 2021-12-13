@@ -50,6 +50,7 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public Long createCompany(final CompanyDTO dto) {
         final Company companyToCreate = companyConverter.toEntity(dto);
+        companyRepository.create(companyToCreate);
         return companyToCreate.getId();
     }
 

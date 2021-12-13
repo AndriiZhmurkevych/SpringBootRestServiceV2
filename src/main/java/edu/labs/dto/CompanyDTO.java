@@ -1,9 +1,13 @@
 package edu.labs.dto;
 
+import javax.validation.constraints.NotBlank;
+
 public class CompanyDTO {
 
     private Long id;
+    @NotBlank
     private String companyName;
+    @NotBlank
     private String country;
 
     public CompanyDTO(final long id, final String companyName, final String country) {
