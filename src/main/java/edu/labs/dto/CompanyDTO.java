@@ -2,7 +2,7 @@ package edu.labs.dto;
 
 public class CompanyDTO {
 
-    private long id;
+    private Long id;
     private String companyName;
     private String country;
 
