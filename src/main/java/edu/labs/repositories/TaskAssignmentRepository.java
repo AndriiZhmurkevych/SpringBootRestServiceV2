@@ -13,7 +13,7 @@ import edu.labs.entities.TaskAssignment;
 import edu.labs.exceptions.TaskAssignmentNotFoundException;
 
 @Repository
-public class TaskAssigmentRepository implements CrudRepository<TaskAssignment>{
+public class TaskAssignmentRepository implements CrudRepository<TaskAssignment>{
     private final List<TaskAssignment> taskAssignments = new ArrayList<>();
     
     @Override
