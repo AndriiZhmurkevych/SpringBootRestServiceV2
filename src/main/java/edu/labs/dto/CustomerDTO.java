@@ -1,11 +1,15 @@
 package edu.labs.dto;
 
+import javax.validation.constraints.NotBlank;
+
 import edu.labs.entities.Company;
 
 public class CustomerDTO {
 
     private long id;
+    @NotBlank
     private String firstName;
+    @NotBlank
     private String lastName;
     private Company company;
 

@@ -1,12 +1,16 @@
 package edu.labs.dto;
 
+import javax.validation.constraints.NotBlank;
+
 import edu.labs.enums.TaskStatus;
 
 public class TaskDTO {
 
     private Long id;
+    @NotBlank
     private String summary;
     private String description;
+    @NotBlank
     private TaskStatus status;
 
     public TaskDTO(final long id, final String summary, final String description, final TaskStatus status) {
