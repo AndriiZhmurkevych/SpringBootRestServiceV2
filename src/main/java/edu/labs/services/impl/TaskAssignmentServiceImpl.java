@@ -5,6 +5,10 @@ import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
 
+import edu.labs.exceptions.CustomerNotFoundException;
+import edu.labs.exceptions.EmployeeNotFoundException;
+import edu.labs.repositories.CustomerRepository;
+import edu.labs.repositories.EmployeeRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
@@ -27,6 +31,10 @@ public class TaskAssignmentServiceImpl implements TaskAssignmentService {
     private TaskAssignmentConverter taskAssignmentConverter;
     @Resource
     private TaskConverter taskConverter;
+    @Resource
+    private EmployeeRepository employeeRepository;
+    @Resource
+    private CustomerRepository customerRepository;
 
     @Override
     public List<TaskAssignmentDTO> getAllTaskAssignments() {
@@ -79,4 +87,15 @@ public class TaskAssignmentServiceImpl implements TaskAssignmentService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<TaskDTO> findTasksByEmployeeId(final Long id) throws EmployeeNotFoundException {
+        final Employee employee = employeeRepository.getById(id);
+        return findTasksByEmployee(employee);
+    }
+
+    @Override
+    public List<TaskDTO> findTasksByReporterId(final Long id) throws CustomerNotFoundException {
+        final Customer customer = customerRepository.getById(id);
+        return findTasksByReporter(customer);
+    }
 }

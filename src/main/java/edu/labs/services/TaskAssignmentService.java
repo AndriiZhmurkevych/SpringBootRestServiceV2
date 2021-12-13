@@ -8,6 +8,8 @@ import edu.labs.entities.Customer;
 import edu.labs.entities.Employee;
 import edu.labs.entities.Task;
 import edu.labs.exceptions.BaseException;
+import edu.labs.exceptions.CustomerNotFoundException;
+import edu.labs.exceptions.EmployeeNotFoundException;
 
 public interface TaskAssignmentService {
 
@@ -27,4 +29,7 @@ public interface TaskAssignmentService {
 
     List<TaskDTO> findTasksByReporter(final Customer customer);
 
+    List<TaskDTO> findTasksByEmployeeId(Long id) throws BaseException;
+
+    List<TaskDTO> findTasksByReporterId(Long id) throws BaseException;
 }
