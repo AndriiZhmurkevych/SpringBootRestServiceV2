@@ -3,9 +3,12 @@ package edu.labs.repositories;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import edu.labs.entities.Company;
 import edu.labs.exceptions.CompanyNotFoundException;
 
+@Repository
 public class CompanyRepository implements CrudRepository<Company> {
     
     private final List<Company> companies = new ArrayList<>();
@@ -16,8 +19,8 @@ public class CompanyRepository implements CrudRepository<Company> {
     }
 
     @Override
-    public Company getById(final long id) throws CompanyNotFoundException {
-        return companies.stream().filter(item -> item.getId() == id).findFirst()
+    public Company getById(final Long id) throws CompanyNotFoundException {
+        return companies.stream().filter(item -> item.getId().equals(id)).findFirst()
                 .orElseThrow(() -> new CompanyNotFoundException(400, id + " Company not found"));
     }
 

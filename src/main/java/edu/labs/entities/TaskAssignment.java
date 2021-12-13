@@ -1,24 +1,24 @@
 package edu.labs.entities;
 
-public class TaskAssigment {
+public class TaskAssignment {
 
-    private long id;
+    private Long id;
     private Task task;
     private Employee employee;
     private Customer reporter;
 
-    public TaskAssigment(final long id, final Task task, final Employee employee, final Customer reporter) {
+    public TaskAssignment(final Long id, final Task task, final Employee employee, final Customer reporter) {
         this.id = id;
         this.task = task;
         this.employee = employee;
         this.reporter = reporter;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(final long id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 

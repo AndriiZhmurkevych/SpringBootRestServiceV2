@@ -3,9 +3,12 @@ package edu.labs.repositories;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import edu.labs.entities.Employee;
 import edu.labs.exceptions.EmployeeNotFoundException;
 
+@Repository
 public class EmployeeRepository implements CrudRepository<Employee> {
 
     private final List<Employee> employees = new ArrayList<>();
@@ -16,8 +19,8 @@ public class EmployeeRepository implements CrudRepository<Employee> {
     }
 
     @Override
-    public Employee getById(final long id) throws EmployeeNotFoundException {
-        return employees.stream().filter(item -> item.getId() == id).findFirst()
+    public Employee getById(final Long id) throws EmployeeNotFoundException {
+        return employees.stream().filter(item -> item.getId().equals(id)).findFirst()
                 .orElseThrow(() -> new EmployeeNotFoundException(400, id + " employee not found"));
     }
 

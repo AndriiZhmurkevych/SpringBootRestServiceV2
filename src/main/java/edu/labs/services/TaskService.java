@@ -4,7 +4,6 @@ import java.util.List;
 
 import edu.labs.dto.TaskDTO;
 import edu.labs.exceptions.BaseException;
-import edu.labs.exceptions.TaskNotFoundException;
 
 public interface TaskService {
     List<TaskDTO> getAllTasks();

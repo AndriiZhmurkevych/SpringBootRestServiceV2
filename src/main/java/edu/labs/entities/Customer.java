@@ -1,23 +1,23 @@
 package edu.labs.entities;
 
 public class Customer {
-    private long id;
+    private Long id;
     private String firstName;
     private String lastName;
     private Company company;
 
-    public Customer(final long id, final String firstName, final String lastName, final Company company) {
+    public Customer(final Long id, final String firstName, final String lastName, final Company company) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.company = company;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(final long id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 

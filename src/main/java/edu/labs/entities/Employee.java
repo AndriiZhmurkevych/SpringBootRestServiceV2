@@ -6,7 +6,7 @@ import edu.labs.enums.EmployeeLevel;
 
 public class Employee {
 
-    private long id;
+    private Long id;
     private String firstName;
     private String lastName;
     private EmployeeLevel level;
@@ -15,7 +15,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(final long id, final String firstName, final String lastName, final EmployeeLevel level,
+    public Employee(final Long id, final String firstName, final String lastName, final EmployeeLevel level,
             final Date birthDay) {
         this.id = id;
         this.firstName = firstName;
@@ -24,11 +24,11 @@ public class Employee {
         this.birthDay = birthDay;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(final long id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 

@@ -19,8 +19,8 @@ public class TaskRepository implements CrudRepository<Task> {
     }
 
     @Override
-    public Task getById(final long id) throws TaskNotFoundException {
-        return tasks.stream().filter(item -> item.getId() == id).findFirst()
+    public Task getById(final Long id) throws TaskNotFoundException {
+        return tasks.stream().filter(item -> item.getId().equals(id)).findFirst()
                 .orElseThrow(() -> new TaskNotFoundException(400, id + " Task not found"));
     }
 
@@ -39,9 +39,9 @@ public class TaskRepository implements CrudRepository<Task> {
     }
 
     @Override
-    public Long create(final Task item) {
-        tasks.add(item);
-        return item.getId();
+    public Long create(final Task task) {
+        tasks.add(task);
+        return task.getId();
     }
 
 }

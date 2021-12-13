@@ -3,9 +3,12 @@ package edu.labs.repositories;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import edu.labs.entities.Customer;
 import edu.labs.exceptions.CustomerNotFoundException;
 
+@Repository
 public class CustomerRepository implements CrudRepository<Customer> {
     private final List<Customer> customers = new ArrayList<>();
 
@@ -15,8 +18,8 @@ public class CustomerRepository implements CrudRepository<Customer> {
     }
 
     @Override
-    public Customer getById(final long id) throws CustomerNotFoundException {
-        return customers.stream().filter(item -> item.getId() == id).findFirst()
+    public Customer getById(final Long id) throws CustomerNotFoundException {
+        return customers.stream().filter(item -> item.getId().equals(id)).findFirst()
                 .orElseThrow(() -> new CustomerNotFoundException(400, id + " Customer not found"));
     }
 

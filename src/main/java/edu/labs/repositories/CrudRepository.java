@@ -8,7 +8,7 @@ public interface CrudRepository<T> {
 
     List<T> getAll();
 
-    T getById(long id) throws BaseException;
+    T getById(Long id) throws BaseException;
 
     T update(T item) throws BaseException;
 
