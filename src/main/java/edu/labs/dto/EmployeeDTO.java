@@ -4,10 +4,14 @@ import edu.labs.enums.EmployeeLevel;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotBlank;
+
 public class EmployeeDTO {
 
     private long id;
+    @NotBlank
     private String firstName;
+    @NotBlank
     private String lastName;
     private EmployeeLevel level;
     private Date birthDay;

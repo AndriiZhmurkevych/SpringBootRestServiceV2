@@ -39,7 +39,7 @@ public class TaskController {
     }
 
     @GetMapping("/tasks/{id}")
-    public ResponseEntity<TaskDTO> getIngridientById(@PathVariable final Long id) throws BaseException {
+    public ResponseEntity<TaskDTO> getTaskById(@PathVariable final Long id) throws BaseException {
         return ResponseEntity.ok().body(taskService.getTaskById(id));
     }
 
